@@ -18,11 +18,23 @@ namespace Calculadora.Training
             Console.WriteLine("..........CALCULADORA LAS GORDAS..........");
             Console.WriteLine("..........Suma, Resta, Multiplica o Divide 2 Numeros..........");
 
+            Console.WriteLine("Ingrese operacion a realizar, Suma, Resta, Multiplicacion o Division:");
+            tipoOperacion = Console.ReadLine();
+
             Console.WriteLine("Ingresa un numero: ");
             valores.Add(Convert.ToInt32(Console.ReadLine()));
 
             Console.WriteLine("Ingrese otro numero: ");
             valores.Add(Convert.ToInt32(Console.ReadLine()));
+
+            if (tipoOperacion == "Division")
+            {
+                resultado = valores[0] / valores[1];
+
+                Console.WriteLine($"El resultado de la Division es:{resultado}");
+
+                return;
+            }
 
             do
             {
@@ -38,9 +50,6 @@ namespace Calculadora.Training
                     otroNUmero = false;
                 }
             } while (otroNUmero);
-
-            Console.WriteLine("Ingrese operacion a realizar, Suma, Resta, Multiplicacion o Division:");
-            tipoOperacion = Console.ReadLine();
 
                 switch (tipoOperacion)
                 {
