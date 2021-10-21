@@ -52,11 +52,25 @@ namespace Calculadora.Training
                     } while (valores.Count > i);
                         break;
                     case "Resta":
-                        //Console.WriteLine("El resultado de la resta es: " + restaCholo(numero1, numero2));
-                        break;
-                    case "Multiplicacion":
-                      //  Console.WriteLine("El resultado de la multiplicacion es: " + multiplicacionChuy(numero1, numero2));
-                        break;
+                    do
+                    {
+                        resultado = resultado - valores[i];
+                        if (i == 0)
+                        {
+                            resultado = resultado * -1;
+                        }
+                        i++;
+                      
+                     } while (valores.Count > i);
+                    break;
+                case "Multiplicacion":
+                    do
+                    {
+                        resultado = resultado == 0 ? resultado = valores[i] : resultado * valores[i];
+                        i++;
+                    } while (valores.Count > i);
+                    Console.WriteLine($"El resultado de la multiplicacion es:{resultado}");
+                    break;
                     case "Division":
                      //   Console.WriteLine("El resultado de la division es: " + divisionChuy(numero1, numero2));
                         break;
