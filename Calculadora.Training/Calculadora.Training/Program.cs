@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Calculadora.Training
 {
@@ -6,42 +7,66 @@ namespace Calculadora.Training
     {
         static void Main(string[] args)
         {
-            decimal numero1, numero2, resultado;
-            string tipoOperacion;
+            decimal numero1, numero2;
+            decimal resultado = 0;
+            string tipoOperacion, Respuesta;
+            bool otroNUmero = true;
+            int i = 0;
+
+            List<decimal> valores = new List<decimal>();
 
             Console.WriteLine("..........CALCULADORA LAS GORDAS..........");
             Console.WriteLine("..........Suma, Resta, Multiplica o Divide 2 Numeros..........");
 
             Console.WriteLine("Ingresa un numero: ");
-            numero1 = Convert.ToInt32(Console.ReadLine());
+            valores.Add(Convert.ToInt32(Console.ReadLine()));
 
-            Console.WriteLine("Ingresa otro numero: ");
-            numero2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ingrese otro numero: ");
+            valores.Add(Convert.ToInt32(Console.ReadLine()));
+
+            do
+            {
+                Console.WriteLine("Quieres ingresar otro numero SI/NO?");
+                Respuesta = Console.ReadLine();
+                if (Respuesta.Equals("SI"))
+                {
+                    Console.WriteLine("Ingrese otro numero: ");
+                    valores.Add(Convert.ToInt32(Console.ReadLine()));
+                }
+                else if (Respuesta.Equals("NO"))
+                {
+                    otroNUmero = false;
+                }
+            } while (otroNUmero);
 
             Console.WriteLine("Ingrese operacion a realizar, Suma, Resta, Multiplicacion o Division:");
             tipoOperacion = Console.ReadLine();
 
-            switch (tipoOperacion)
-            {
-                case "Suma":
-                    Console.WriteLine("El resultado de la sumas es: " + sumaDelCholo(numero1, numero2));
-                    break;
-                case "Resta":
-                    Console.WriteLine("El resultado de la resta es: " + restaCholo(numero1, numero2));
-                    break;
-                case "Multiplicacion":
-                    Console.WriteLine("El resultado de la multiplicacion es: " + multiplicacionChuy(numero1, numero2));
-                    break;
-                case "Division":
-                    Console.WriteLine("El resultado de la division es: " + divisionChuy(numero1, numero2));
-                    break;
-                default:
-                    Console.WriteLine("El valor ingresado no es ningun tipo de operacion valido.");
-                    break;
+                switch (tipoOperacion)
+                {
+                    case "Suma":
+                    do
+                    {
+                        resultado = resultado + valores[i];
+                        i++;
+                    } while (valores.Count > i);
+                        break;
+                    case "Resta":
+                        //Console.WriteLine("El resultado de la resta es: " + restaCholo(numero1, numero2));
+                        break;
+                    case "Multiplicacion":
+                      //  Console.WriteLine("El resultado de la multiplicacion es: " + multiplicacionChuy(numero1, numero2));
+                        break;
+                    case "Division":
+                     //   Console.WriteLine("El resultado de la division es: " + divisionChuy(numero1, numero2));
+                        break;
+                    default:
+                    //    Console.WriteLine("El valor ingresado no es ningun tipo de operacion valido.");
+                        break;
 
-            }
-           
-        }
+                }
+
+            }     
 
         //Author: Marcos Granados
         //Metodo: sumaDelCholo
