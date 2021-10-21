@@ -21,27 +21,6 @@ namespace Calculadora.Training
             Console.WriteLine("Ingrese operacion a realizar, Suma, Resta, Multiplicacion o Division:");
             tipoOperacion = Console.ReadLine();
 
-            //if (tipoOperacion.Equals("Suma"))
-            //{
-            //    Console.WriteLine("El resultado de la sumas es: " + sumaDelCholo(numero1, numero2));
-            //}
-            //else if(tipoOperacion.Equals("Resta"))
-            //{
-            //    Console.WriteLine("El resultado de la resta es: " + restaCholo(numero1, numero2));
-            //}
-            //else if (tipoOperacion.Equals("Multiplicacion"))
-            //{
-            //    Console.WriteLine("El resultado de la multiplicacion es: " + multiplicacionChuy(numero1, numero2));
-            //}
-            //else if (tipoOperacion.Equals("Division"))
-            //{
-            //    Console.WriteLine("El resultado de la division es: " + divisionChuy(numero1, numero2));
-            //}  
-            //else
-            //{
-            //    Console.WriteLine("El valor ingresado no es ningun tipo de operacion valido.");
-            //}
-
             switch (tipoOperacion)
             {
                 case "Suma":
